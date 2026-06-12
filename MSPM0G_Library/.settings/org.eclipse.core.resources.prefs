@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//Debug/I2C/subdir_rules.mk=UTF-8
+encoding//Debug/I2C/subdir_vars.mk=UTF-8
+encoding//Debug/Modbus/subdir_rules.mk=UTF-8
+encoding//Debug/Modbus/subdir_vars.mk=UTF-8
+encoding//Debug/SPI/SPI_Block_transfer/subdir_rules.mk=UTF-8
+encoding//Debug/SPI/SPI_Block_transfer/subdir_vars.mk=UTF-8
+encoding//Debug/SPI/subdir_rules.mk=UTF-8
+encoding//Debug/SPI/subdir_vars.mk=UTF-8
+encoding//Debug/Timer/subdir_rules.mk=UTF-8
+encoding//Debug/Timer/subdir_vars.mk=UTF-8
+encoding//Debug/UART/subdir_rules.mk=UTF-8
+encoding//Debug/UART/subdir_vars.mk=UTF-8
+encoding//Debug/makefile=UTF-8
+encoding//Debug/objects.mk=UTF-8
+encoding//Debug/sources.mk=UTF-8

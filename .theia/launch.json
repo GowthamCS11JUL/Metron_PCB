@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "main",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main"
+            },
+            "debuggerSettings": {
+                "targetConfigs/MSPM0G1107.ccxml": {
+                    "Texas Instruments XDS110 USB Debug Probe/CORTEX_M0P": {
+                        "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues/>\n"
+                    }
+                }
+            }
+        },
+        {
+            "name": "main (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main/app.c"
+            }
+        },
+        {
+            "name": "main (2)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main/empty.syscfg"
+            }
+        }
+    ]
+}

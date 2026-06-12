@@ -1,0 +1,77 @@
+[
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/empty.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/usb.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/dynamic_parser.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/delay_timer.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/app.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/i2c_common.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/adc_spi.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/maini2c.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/usb_mux.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/uart_mux.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/DB_board.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/test.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/demo.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/measurement.c"
+   },
+   {
+      "directory" : "D:/Metron_firmware/main/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/Metron_firmware/main\" -I\"D:/Metron_firmware/MSPM0G_Library/Include\" -I\"D:/Metron_firmware/main/Debug\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source/third_party/CMSIS/Core/Include\" -I\"C:/ti/mspm0_sdk_2_00_00_03/source\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c++/v1\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib/clang/18/include\" -isystem\"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/include/c\"",
+      "file"      : "D:/Metron_firmware/main/Debug/ti_msp_dl_config.c"
+   }
+]
