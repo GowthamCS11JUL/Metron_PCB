@@ -77,14 +77,6 @@ UART_Interface_Error UART_Interface_Initialize(UART_Interface *thisInterface, UA
         txTrig = DMA_UART2_TX_TRIG;
         rxTrig = DMA_UART2_RX_TRIG;        
     }
-else if (thisInstance == 3)
-{
-    NVIC_ClearPendingIRQ(UART3_INT_IRQn);
-    NVIC_EnableIRQ(UART3_INT_IRQn);
-
-    txTrig = DMA_UART3_TX_TRIG;
-    rxTrig = DMA_UART3_RX_TRIG;
-}
     else {
         thisInterface->error = UART_ERROR_WRONG_INSTANCE; 
     }

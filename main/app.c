@@ -1,10 +1,15 @@
 #include "headers.h"
-#include "usb.h"
 #include "variables.h"
 
 void app_init() {
   usb_init();
   cmd_data_setup();
+  AD4115BCPZ_RL7_init(&ADC);
+  i2c0_init();
+  i2c1_init();
+  io_expander_init();
+  usb_pins_init();
+  uart_pin_init();
 }
 
 void cmd_data_setup(void) {}
@@ -40,10 +45,10 @@ void command_dispatcher(UART_DATA *usb_data, Parsed_Command_t *cmd) {
   /* DEMO                                         */
   /* -------------------------------------------- */
 
-  if (strcmp(cmd->tokens[0], "DEMO") == 0) {
-    demo_command_handler(usb_data, cmd);
-    return;
-  }
+//   if (strcmp(cmd->tokens[0], "DEMO") == 0) {
+//     demo_command_handler(usb_data, cmd);
+//     return;
+//   }
 
   /* -------------------------------------------- */
   /* UNKNOWN                                      */
@@ -67,4 +72,4 @@ void UART3_IRQHandler(void) { UART_Interface_IRQ(&UART_MUX); }
 
 void TIMG6_IRQHandler(void) { Timer_Timeout_IRQ(&UART_MUX_Timeout); }
 
-void SPI_0_INST_IRQHandler(void) { SPI_Block_IRQ(&ADC); }
+void SPI_0_INST_IRQHandler(void) { SPI_IRQ(&ADC); }

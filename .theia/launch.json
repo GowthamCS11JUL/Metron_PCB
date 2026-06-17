@@ -34,6 +34,24 @@
                 "name": "main",
                 "resourceId": "/main/empty.syscfg"
             }
+        },
+        {
+            "name": "main (3)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main/DB_board.h"
+            }
+        },
+        {
+            "name": "main (4)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "main",
+                "resourceId": "/main/measurement.c"
+            }
         }
     ]
 }

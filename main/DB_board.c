@@ -1,8 +1,5 @@
 
-// #include "DB_board.h"
-// #include "header.h"
-// #include "ti/driverlib/m0p/dl_core.h"
-// #include <cstdint>
+// #include "headers.h"
 
 // #define TARGET_VOLTAGE 0.5f
 // #define SHORT_THRESHOLD 0.001f
@@ -45,7 +42,8 @@
 // void adc_init(void) {
 //   uint8_t write_cmd = 0x06; // RESET Command
 
-//   // Passed using '&' to guarantee the driver receives a proper memory address
+//   // Passed using '&' to guarantee the driver receives a proper memory
+//   address
 //   // pointer
 //   I2C_Controller_Start_Transmit(&Daughter_I2C, Andc, &write_cmd, 1);
 //   delay_cycles(3200);
@@ -199,7 +197,6 @@
 //   }
 // }
 
-
 // uint32_t resistance_measured()
 // {
 // resistance_fsm_t ResistanceFSM;
@@ -216,3 +213,219 @@
 
 // return (uint32_t)resistance*1000000;
 // }
+
+
+#include <headers.h>
+
+#define CURRENT_SOURCE_2_DAC 0x4A
+#define CURRENT_SOURCE_2_IO 0X3E
+#define ADS122C04 0x40
+
+static void io_expander_config(uint8_t slave_address) {
+  uint8_t write_cmd[2] = {0x03, 0x00};
+
+  i2c_write_verify(&Daughter_I2C, slave_address, write_cmd, 2);
+}
+
+void io_expander_daughter_config(void) {
+  io_expander_config(CURRENT_SOURCE_2_IO);
+}
+void dac_set(void) {
+  uint8_t write_cmd[3] = {0x08, 0xA8, 0xF5};
+  i2c_write_verify(&Daughter_I2C, CURRENT_SOURCE_2_DAC, write_cmd, 3);
+}
+
+void db_board_init(void) 
+{ 
+    io_expander_daughter_config(); 
+    ads122c04_init();
+}
+
+
+static bool I2C_Wait_With_Timeout(I2C_Controller *controller) {
+  uint32_t start_time;
+  uint32_t timeout_us = 500000;
+
+  start_time = Delay_Timer_Get(&USB_BUFFER);
+
+  while (!I2C_Controller_Transaction_Done(controller)) {
+    if ((Delay_Timer_Get(&USB_BUFFER) - start_time) >= timeout_us) {
+      controller->state = I2C_CONTROLLER_IDLE;
+      return false;
+    }
+  }
+
+  if (controller->error != I2C_CONTROLLER_ERROR_NONE) {
+    return false;
+  }
+
+  return true;
+}
+
+void current_source_2_select(current_value value) {
+  uint8_t write_data[2] = {0x01, 0x00};
+  switch (value) {
+  case current_1ua:
+    write_data[1] = 0x03;
+    break;
+  case current_10ua:
+    write_data[1] = 0x07;
+    break;
+  case current_100ua:
+    write_data[1] = 0x0B;
+    break;
+  case current_1ma:
+    write_data[1] = 0x0F;
+    break;
+  case current_10ma:
+    write_data[1] = 0x13;
+    break;
+  default:
+    break;
+  }
+  i2c_write_verify(&Daughter_I2C, CURRENT_SOURCE_2_IO, write_data, 2);
+}
+
+void ads122c04_init(void) {
+  uint8_t reset_cmd = 0x06;
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, &reset_cmd, 1);
+  I2C_Wait_With_Timeout(&Daughter_I2C);
+  delay_cycles(32000);
+
+  // Set Register 1 to 0x02 (External VREF, Continuous or Single-Shot depending on your setup)
+  uint8_t write_reg1[2] = {0x44, 0x02}; 
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, write_reg1, 2);
+  I2C_Wait_With_Timeout(&Daughter_I2C);
+}
+
+void start_sync_cmd(void) {
+  uint8_t start_cmd = 0x08;
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, &start_cmd, 1);
+  if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+    return;
+}
+
+// Pass the 3-byte destination array into the function to avoid stack corruption
+void ads122c04_read(uint8_t *out_data)
+ {
+  uint8_t cmd_start = 0x08;
+  uint8_t cmd_read_reg2 = 0x28;
+  uint8_t reg2_value = 0;
+  uint8_t cmd_rdata = 0x10;
+
+  // 1. Kick off a Single-Shot conversion
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, &cmd_start, 1);
+  if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+    return;
+
+  // Give the hardware a tiny bit of breathing room before polling
+  delay_cycles(1000);
+
+  // 2. Poll Register 2 until Bit 7 (DRDY) goes HIGH
+  do {
+    // Send RREG command for Register 2
+    I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, &cmd_read_reg2, 1);
+    if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+      return;
+    // Wait briefly if your I2C driver requires blocking time, then read back 1
+    // byte
+    I2C_Controller_Start_Receive(&Daughter_I2C, ADS122C04, &reg2_value, 1);
+    if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+      return;
+
+    // Add a small delay to prevent pinning the I2C bus with infinite
+    // back-to-back spam
+    delay_cycles(2000);
+
+  } while ((reg2_value & 0x80) == 0);
+
+  // 3. DRDY is 1! Send the RDATA command
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, &cmd_rdata, 1);
+  if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+    return;
+
+  // 4. Read back the 3 bytes directly into your output destination
+  I2C_Controller_Start_Receive(&Daughter_I2C, ADS122C04, out_data, 3);
+  if (!I2C_Wait_With_Timeout(&Daughter_I2C))
+    return;
+}
+float ads122c04_raw_to_voltage(uint8_t *raw_bytes, uint8_t gain) 
+{
+    // 1. Combine 3 bytes into a signed 32-bit integer (Big-Endian format)
+    int32_t adc_code = ((int32_t)raw_bytes[0] << 16) | 
+                       ((int32_t)raw_bytes[1] << 8)  | 
+                        (int32_t)raw_bytes[2];
+
+    // 2. Sign-extend the 24-bit value into a proper 32-bit two's complement signed integer
+    if (adc_code & 0x00800000) {
+        adc_code |= 0xFF000000;
+    }
+
+    // 3. Apply the voltage conversion formula (Vref = 5.0V)
+    float v_ref = 5.0f;
+    float voltage = ((float)adc_code / 8388608.0f) * (v_ref / (float)gain);
+
+    return voltage;
+}
+
+void ads122c04_calibration(current_value value) {
+  // Command byte 0x40 targets Register 0
+  uint8_t write_cmd[2] = {0x40, 0x00}; 
+  uint8_t raw_adc_bytes[3];
+
+  switch (value) {
+    case current_1ua:
+    case current_10ua:
+    case current_100ua:
+    case current_1ma:
+      // MUX = AIN1-AVSS (0x90), Gain = 4 (0x04), Bypassed PGA (0x01) -> 0x95
+      write_cmd[1] = 0x95; 
+      break;
+
+    case current_10ma:
+      // MUX = AIN1-AVSS (0x90), Gain = 1 (0x00), Bypassed PGA (0x01) -> 0x91
+      write_cmd[1] = 0x91; 
+      break;
+
+    default:
+      break;
+  }
+
+  // 1. Send the updated MUX + Gain combination to Register 0
+  I2C_Controller_Start_Transmit(&Daughter_I2C, ADS122C04, write_cmd, 2);
+  if (!I2C_Wait_With_Timeout(&Daughter_I2C)) return;
+
+  delay_cycles(32000); // Give the analog front-end settling time
+
+  // 2. Read the fresh conversion data
+  ads122c04_read(raw_adc_bytes);
+}
+void current_10ma_set() {
+  current_source_2_select(current_10ma);
+  ads122c04_calibration(current_10ma);
+  dac_set();
+}
+
+void current_1ma_set() {
+  current_source_2_select(current_1ma);
+  ads122c04_calibration(current_1ma);
+   dac_set();
+}
+
+void current_100ua_set() {
+  current_source_2_select(current_100ua);
+  ads122c04_calibration(current_100ua);
+   dac_set();
+}
+
+void current_10ua_set() {
+  current_source_2_select(current_10ua);
+  ads122c04_calibration(current_10ua);
+   dac_set();
+}
+
+void current_1ua_set() {
+  current_source_2_select(current_1ua);
+  ads122c04_calibration(current_1ua);
+   dac_set();
+}

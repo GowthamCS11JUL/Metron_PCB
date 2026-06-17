@@ -45,4 +45,6 @@ void usb_function_test(usb_channel ch);
  */
 void usb_resistance_test(usb_channel ch);
 
+void to_check(void);
+
 #endif /* USB_MUX_H_ */

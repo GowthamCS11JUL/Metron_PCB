@@ -2,7 +2,8 @@
 
 SPI/SPI_Block_transfer/SPI_block_transfer.o: \
  ../SPI/SPI_Block_transfer/SPI_block_transfer.c \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_spi.h \
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h \
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/mspm0g350x.h \
@@ -34,9 +35,6 @@ SPI/SPI_Block_transfer/SPI_block_transfer.o: \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_common.h \
- D:/Metron_firmware/MSPM0G_Library/Include/SPI_Block_transfer.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aes.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aesadv.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_comp.h \
@@ -63,6 +61,7 @@ SPI/SPI_Block_transfer/SPI_block_transfer.o: \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_rtc_common.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_rtc_a.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_scratchpad.h \
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_spi.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_tamperio.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_timera.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_timer.h \
@@ -74,8 +73,10 @@ SPI/SPI_Block_transfer/SPI_block_transfer.o: \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_vref.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_wwdt.h \
  C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_interrupt.h \
- C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_spi.h:
+ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h \
+ D:/Metron_firmware/MSPM0G_Library/Include/SPI_Block_transfer.h
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h:
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/DeviceFamily.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/mspm0g350x.h:
@@ -107,9 +108,6 @@ C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_debugss.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/hw_sysctl.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/peripherals/m0p/sysctl/hw_sysctl_mspm0g1x0x_g3x0x.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_common.h:
-D:/Metron_firmware/MSPM0G_Library/Include/SPI_Block_transfer.h:
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/driverlib.h:
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_adc12.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aes.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_aesadv.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_comp.h:
@@ -136,6 +134,7 @@ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_rtc.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_rtc_common.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_rtc_a.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_scratchpad.h:
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_spi.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_tamperio.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_timera.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_timer.h:
@@ -148,3 +147,4 @@ C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_vref.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/dl_wwdt.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_interrupt.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/driverlib/m0p/dl_systick.h:
+D:/Metron_firmware/MSPM0G_Library/Include/SPI_Block_transfer.h:

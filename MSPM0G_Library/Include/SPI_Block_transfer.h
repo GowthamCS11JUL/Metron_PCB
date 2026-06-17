@@ -29,7 +29,7 @@ typedef struct {
     uint16_t txNum;
     uint16_t tmpRxNum;
     uint16_t tmpTxNum;
-    uint32_t csPin;
+    uint16_t csPin;
     bool rxDma;   
     bool txDma;   
 
@@ -41,7 +41,7 @@ typedef struct {
 
 } SPI_Block_Interface;
 
-uint8_t SPI_Initialize_block_transfer(SPI_Block_Interface *thisInterface, SPI_Regs *thisPort,GPIO_Regs *this_gpio_port, uint8_t thisInstance, uint32_t this_csPin, uint8_t txDmaChannel, uint8_t rxDmaChannel);
+uint8_t SPI_Initialize_block_transfer(SPI_Block_Interface *thisInterface, SPI_Regs *thisPort,GPIO_Regs *this_gpio_port, uint8_t thisInstance, uint16_t this_csPin, uint8_t txDmaChannel, uint8_t rxDmaChannel);
 void SPI_Transact_block(SPI_Block_Interface *thisInterface, uint8_t *txData, uint16_t numTx, uint8_t *rxData, uint16_t numRx);
 void SPI_Block_IRQ(SPI_Block_Interface *thisInterface);
 #endif /* SPI_BLOCK_TRANSFER_H_ */

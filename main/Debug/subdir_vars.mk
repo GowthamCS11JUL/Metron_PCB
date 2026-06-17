@@ -17,7 +17,7 @@ C_SRCS += \
 ../dynamic_parser.c \
 ../empty.c \
 ./ti_msp_dl_config.c \
-C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c \
+C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g110x_ticlang.c \
 ../i2c_common.c \
 ../maini2c.c \
 ../measurement.c \
@@ -43,7 +43,7 @@ C_DEPS += \
 ./dynamic_parser.d \
 ./empty.d \
 ./ti_msp_dl_config.d \
-./startup_mspm0g350x_ticlang.d \
+./startup_mspm0g110x_ticlang.d \
 ./i2c_common.d \
 ./maini2c.d \
 ./measurement.d \
@@ -64,7 +64,7 @@ OBJS += \
 ./dynamic_parser.o \
 ./empty.o \
 ./ti_msp_dl_config.o \
-./startup_mspm0g350x_ticlang.o \
+./startup_mspm0g110x_ticlang.o \
 ./i2c_common.o \
 ./maini2c.o \
 ./measurement.o \
@@ -87,7 +87,7 @@ OBJS__QUOTED += \
 "dynamic_parser.o" \
 "empty.o" \
 "ti_msp_dl_config.o" \
-"startup_mspm0g350x_ticlang.o" \
+"startup_mspm0g110x_ticlang.o" \
 "i2c_common.o" \
 "maini2c.o" \
 "measurement.o" \
@@ -110,7 +110,7 @@ C_DEPS__QUOTED += \
 "dynamic_parser.d" \
 "empty.d" \
 "ti_msp_dl_config.d" \
-"startup_mspm0g350x_ticlang.d" \
+"startup_mspm0g110x_ticlang.d" \
 "i2c_common.d" \
 "maini2c.d" \
 "measurement.d" \
@@ -133,7 +133,7 @@ C_SRCS__QUOTED += \
 "../dynamic_parser.c" \
 "../empty.c" \
 "./ti_msp_dl_config.c" \
-"C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g350x_ticlang.c" \
+"C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/m0p/startup_system_files/ticlang/startup_mspm0g110x_ticlang.c" \
 "../i2c_common.c" \
 "../maini2c.c" \
 "../measurement.c" \

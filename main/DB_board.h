@@ -1,7 +1,7 @@
 // #ifndef DB_BOARD_H_
 // #define DB_BOARD_H_
 
-// #include "DB_board.h"
+
 // #define Andc 0x40
 // #define U4 0x4A
 // #define U2 0X3E
@@ -41,3 +41,33 @@
 // void resistance_fsm_task(resistance_fsm_t *fsm);
 
 // #endif
+
+#ifndef DB_BOARD_H_
+#define DB_BOARD_H_
+
+typedef enum
+{
+    current_1ua = 0,
+    current_10ua,
+    current_100ua,
+    current_1ma,
+    current_10ma
+} current_value;
+
+ void io_expander_daughter_config(void);
+void dac_set(void);
+void current_source_2_select(current_value value);
+void db_board_init(void) ;
+void ads122c04_init(void);
+void current_10ma_set();
+void current_1ma_set();
+void current_100ua_set();
+void current_10ua_set();
+void current_1ua_set();
+void start_sync_cmd(void);
+void ads122c04_read(uint8_t *out_data);
+float ads122c04_raw_to_voltage(uint8_t *raw_bytes, uint8_t gain) ;
+void ads122c04_calibration(current_value value);
+#endif
+
+

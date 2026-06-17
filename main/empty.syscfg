@@ -1,7 +1,7 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --board "/ti/boards/LP_MSPM0G3507" --product "mspm0_sdk@2.00.00.03"
+ * @cliArgs --device "MSPM0G110X" --package "LQFP-48(PT)" --part "Default" --product "mspm0_sdk@2.00.00.03"
  * @versions {"tool":"1.19.0+3426"}
  */
 
@@ -14,7 +14,6 @@ const GPIO2         = GPIO.addInstance();
 const GPIO3         = GPIO.addInstance();
 const GPIO4         = GPIO.addInstance();
 const GPIO5         = GPIO.addInstance();
-const GPIO6         = GPIO.addInstance();
 const I2C           = scripting.addModule("/ti/driverlib/I2C", {}, false);
 const I2C1          = I2C.addInstance();
 const I2C2          = I2C.addInstance();
@@ -36,70 +35,60 @@ const ProjectConfig = scripting.addModule("/ti/project_config/ProjectConfig");
 GPIO1.$name                         = "USB_";
 GPIO1.associatedPins.create(7);
 GPIO1.associatedPins[0].$name       = "ENA";
-GPIO1.associatedPins[0].pin.$assign = "j17_expansion.1";
+GPIO1.associatedPins[0].pin.$assign = "PA2";
 GPIO1.associatedPins[1].$name       = "ENB";
-GPIO1.associatedPins[1].pin.$assign = "j17_expansion.2";
+GPIO1.associatedPins[1].pin.$assign = "PA3";
 GPIO1.associatedPins[2].$name       = "SEL_A0";
-GPIO1.associatedPins[2].pin.$assign = "j17_expansion.3";
+GPIO1.associatedPins[2].pin.$assign = "PA4";
 GPIO1.associatedPins[3].$name       = "SEL_A1";
-GPIO1.associatedPins[3].pin.$assign = "j17_expansion.4";
+GPIO1.associatedPins[3].pin.$assign = "PA5";
 GPIO1.associatedPins[4].$name       = "SEL_B0";
-GPIO1.associatedPins[4].pin.$assign = "boosterpack.3";
+GPIO1.associatedPins[4].pin.$assign = "PA9";
 GPIO1.associatedPins[5].$name       = "SEL_B1";
-GPIO1.associatedPins[5].pin.$assign = "boosterpack.13";
+GPIO1.associatedPins[5].pin.$assign = "PB6";
 GPIO1.associatedPins[6].$name       = "VBUS_ON";
-GPIO1.associatedPins[6].pin.$assign = "boosterpack.17";
+GPIO1.associatedPins[6].pin.$assign = "PB15";
 
 const Board                       = scripting.addModule("/ti/driverlib/Board", {}, false);
 Board.peripheral.$assign          = "DEBUGSS";
-Board.peripheral.swclkPin.$assign = "j25_expansion.16";
-Board.peripheral.swdioPin.$assign = "j25_expansion.14";
+Board.peripheral.swclkPin.$assign = "PA20";
+Board.peripheral.swdioPin.$assign = "PA19";
 
 GPIO2.$name                         = "UART";
 GPIO2.associatedPins.create(3);
 GPIO2.associatedPins[0].$name       = "Select_A0";
-GPIO2.associatedPins[0].pin.$assign = "boosterpack.7";
+GPIO2.associatedPins[0].pin.$assign = "PB9";
 GPIO2.associatedPins[1].$name       = "En";
-GPIO2.associatedPins[1].pin.$assign = "boosterpack.15";
+GPIO2.associatedPins[1].pin.$assign = "PB8";
 GPIO2.associatedPins[2].$name       = "Select_A1";
-GPIO2.associatedPins[2].pin.$assign = "j17_expansion.9";
+GPIO2.associatedPins[2].pin.$assign = "PA1";
 
 GPIO3.$name                         = "GPIO_GRP_0";
 GPIO3.associatedPins[0].$name       = "PIN_0";
-GPIO3.associatedPins[0].pin.$assign = "j19_expansion.9";
+GPIO3.associatedPins[0].pin.$assign = "PA0";
 
 GPIO4.$name                          = "ADC";
 GPIO4.associatedPins.create(3);
 GPIO4.associatedPins[0].$name        = "SPI_CS";
 GPIO4.associatedPins[0].initialValue = "SET";
-GPIO4.associatedPins[0].pin.$assign  = "boosterpack.36";
+GPIO4.associatedPins[0].pin.$assign  = "PB20";
 GPIO4.associatedPins[1].$name        = "nERROR";
 GPIO4.associatedPins[1].initialValue = "SET";
-GPIO4.associatedPins[1].pin.$assign  = "boosterpack.24";
+GPIO4.associatedPins[1].pin.$assign  = "PA22";
 GPIO4.associatedPins[2].$name        = "nSYNC";
 GPIO4.associatedPins[2].initialValue = "SET";
-GPIO4.associatedPins[2].pin.$assign  = "j17_expansion.8";
+GPIO4.associatedPins[2].pin.$assign  = "PA21";
 
 GPIO5.$name                         = "LED";
 GPIO5.associatedPins[0].$name       = "Green";
-GPIO5.associatedPins[0].pin.$assign = "j17_expansion.7";
-scripting.suppress("Connected to hardware,@@@.+?@@@ is connected to XDS110 UART on the MSPM0G3507 LaunchPad\\. Consider selecting it in 'use hardware' above\\. @@@.+?@@@", GPIO5.associatedPins[0], "pin");
-
-GPIO6.$name                               = "LED_";
-GPIO6.associatedPins.create(3);
-GPIO6.associatedPins[0].$name             = "GREEN";
-GPIO6.associatedPins[0].launchPadShortcut = "LED2GreenEn";
-GPIO6.associatedPins[1].launchPadShortcut = "LED2RedEn";
-GPIO6.associatedPins[1].$name             = "RED";
-GPIO6.associatedPins[2].$name             = "BLUE";
-GPIO6.associatedPins[2].launchPadShortcut = "LED2BlueEn";
+GPIO5.associatedPins[0].pin.$assign = "PA14";
 
 I2C1.$name                             = "Daughter_I2C";
 I2C1.basicEnableController             = true;
 I2C1.intController                     = ["ARBITRATION_LOST","EVENT1_DMA_DONE","EVENT2_DMA_DONE","NACK","RXFIFO_FULL","RXFIFO_TRIGGER","RX_DONE","START","STOP","TXFIFO_EMPTY","TXFIFO_TRIGGER","TX_DONE"];
 I2C1.peripheral.$assign                = "I2C0";
-I2C1.peripheral.sdaPin.$assign         = "boosterpack.38";
-I2C1.peripheral.sclPin.$assign         = "boosterpack.37";
+I2C1.peripheral.sdaPin.$assign         = "PA28";
+I2C1.peripheral.sclPin.$assign         = "PA31";
 I2C1.sdaPinConfig.hideOutputInversion  = scripting.forceWrite(false);
 I2C1.sdaPinConfig.onlyInternalResistor = scripting.forceWrite(false);
 I2C1.sdaPinConfig.passedPeripheralType = scripting.forceWrite("Digital");
@@ -113,8 +102,8 @@ I2C2.$name                             = "Master_I2C";
 I2C2.basicEnableController             = true;
 I2C2.intController                     = ["ARBITRATION_LOST","EVENT1_DMA_DONE","EVENT2_DMA_DONE","NACK","RXFIFO_FULL","RXFIFO_TRIGGER","RX_DONE","START","STOP","TXFIFO_EMPTY","TXFIFO_TRIGGER","TX_DONE"];
 I2C2.peripheral.$assign                = "I2C1";
-I2C2.peripheral.sdaPin.$assign         = "boosterpack.10";
-I2C2.peripheral.sclPin.$assign         = "boosterpack.9";
+I2C2.peripheral.sdaPin.$assign         = "PB3";
+I2C2.peripheral.sclPin.$assign         = "PB2";
 I2C2.sdaPinConfig.hideOutputInversion  = scripting.forceWrite(false);
 I2C2.sdaPinConfig.onlyInternalResistor = scripting.forceWrite(false);
 I2C2.sdaPinConfig.passedPeripheralType = scripting.forceWrite("Digital");
@@ -130,11 +119,12 @@ SPI1.overrideRetention          = true;
 SPI1.polarity                   = "1";
 SPI1.phase                      = "1";
 SPI1.targetBitRate              = 1000000;
+SPI1.dataSize                   = 16;
 SPI1.peripheral.$assign         = "SPI0";
-SPI1.peripheral.sclkPin.$assign = "boosterpack.25";
-SPI1.peripheral.mosiPin.$assign = "boosterpack.18";
-SPI1.peripheral.misoPin.$assign = "boosterpack.23";
-SPI1.peripheral.cs0Pin.$assign  = "boosterpack.4";
+SPI1.peripheral.sclkPin.$assign = "PB18";
+SPI1.peripheral.mosiPin.$assign = "PB17";
+SPI1.peripheral.misoPin.$assign = "PB19";
+SPI1.peripheral.cs0Pin.$assign  = "PA8";
 SPI1.sclkPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric6";
 SPI1.mosiPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric7";
 SPI1.misoPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric8";
@@ -170,8 +160,8 @@ UART1.enableFIFO               = true;
 UART1.rxFifoThreshold          = "DL_UART_RX_FIFO_LEVEL_1_4_FULL";
 UART1.txFifoThreshold          = "DL_UART_TX_FIFO_LEVEL_3_4_EMPTY";
 UART1.peripheral.$assign       = "UART0";
-UART1.peripheral.rxPin.$assign = "boosterpack.33";
-UART1.peripheral.txPin.$assign = "boosterpack.34";
+UART1.peripheral.rxPin.$assign = "PA11";
+UART1.peripheral.txPin.$assign = "PA10";
 UART1.txPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric0";
 UART1.rxPinConfig.$name        = "ti_driverlib_gpio_GPIOPinGeneric1";
 
@@ -182,8 +172,8 @@ UART2.enabledInterrupts                = ["EOT_DONE","RX","RXD_NEG_EDGE","RXD_PO
 UART2.$name                            = "UART_3";
 UART2.rxFifoThreshold                  = "DL_UART_RX_FIFO_LEVEL_1_4_FULL";
 UART2.peripheral.$assign               = "UART3";
-UART2.peripheral.rxPin.$assign         = "boosterpack.2";
-UART2.peripheral.txPin.$assign         = "boosterpack.5";
+UART2.peripheral.rxPin.$assign         = "PA25";
+UART2.peripheral.txPin.$assign         = "PA26";
 UART2.txPinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric10";
 UART2.txPinConfig.direction            = scripting.forceWrite("OUTPUT");
 UART2.txPinConfig.hideOutputInversion  = scripting.forceWrite(false);
@@ -194,13 +184,4 @@ UART2.rxPinConfig.hideOutputInversion  = scripting.forceWrite(false);
 UART2.rxPinConfig.onlyInternalResistor = scripting.forceWrite(false);
 UART2.rxPinConfig.passedPeripheralType = scripting.forceWrite("Digital");
 
-ProjectConfig.deviceSpin = "MSPM0G3507";
-
-/**
- * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
- * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
- * re-solve from scratch.
- */
-GPIO6.associatedPins[0].pin.$suggestSolution = "j19_expansion.10";
-GPIO6.associatedPins[1].pin.$suggestSolution = "j19_expansion.8";
-GPIO6.associatedPins[2].pin.$suggestSolution = "j19_expansion.5";
+ProjectConfig.deviceSpin = "MSPM0G1107";

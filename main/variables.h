@@ -10,5 +10,5 @@ Timer_Timeout UART_MUX_Timeout;
 Delay_Timer USB_BUFFER;
 I2C_Controller Daughter_I2C;
 I2C_Controller Master_MCU;
-SPI_Block_Interface ADC;
+SPI_Interface ADC;
 #endif

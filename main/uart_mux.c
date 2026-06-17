@@ -93,47 +93,47 @@ return 1;
 uint8_t uart_vmux_select(uart_channel ch) {
   uint8_t result;
 
-  //   DL_GPIO_setPins(UART_En_PORT, UART_En_PIN);
+    DL_GPIO_setPins(UART_En_PORT, UART_En_PIN);
 
-  //   switch (ch) {
-  //   case UART_CH0:
+    switch (ch) {
+    case UART_CH0:
 
-  //     DL_GPIO_clearPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
+      DL_GPIO_clearPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
 
-  //     DL_GPIO_clearPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
-  //     break;
+      DL_GPIO_clearPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
+      break;
 
-  //   case UART_CH1:
+    case UART_CH1:
 
-  //     DL_GPIO_clearPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
+      DL_GPIO_clearPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
 
-  //     DL_GPIO_setPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
-  //     break;
+      DL_GPIO_setPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
+      break;
 
-  //   case UART_CH2:
+    case UART_CH2:
 
-  //     DL_GPIO_setPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
+      DL_GPIO_setPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
 
-  //     DL_GPIO_clearPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
-  //     break;
+      DL_GPIO_clearPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
+      break;
 
-  //   case UART_CH3:
+    case UART_CH3:
 
-  //     DL_GPIO_setPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
+      DL_GPIO_setPins(UART_Select_A1_PORT, UART_Select_A1_PIN);
 
-  //     DL_GPIO_setPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
-  //     break;
+      DL_GPIO_setPins(UART_Select_A0_PORT, UART_Select_A0_PIN);
+      break;
 
-  //   default:
+    default:
 
-  //     DL_GPIO_clearPins(UART_En_PORT, UART_En_PIN);
+      DL_GPIO_clearPins(UART_En_PORT, UART_En_PIN);
 
-  //     strcpy((char *)executing_command->response, "FAIL");
+      strcpy((char *)executing_command->response, "FAIL");
 
-  //     executing_command->resp_len = 4;
+      executing_command->resp_len = 4;
 
-  //     return;
-  //   }
+      return 0;
+    }
 
   /* Allow MUX to settle */
   delay_cycles(32000); /* 1 ms @ 32 MHz */

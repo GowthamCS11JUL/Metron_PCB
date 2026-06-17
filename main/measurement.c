@@ -251,7 +251,7 @@ void measurement_command_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
  * MES:VOLT:SINGLE:CON1_MUX1:PIN_5
  * ========================================================= */
 void voltage_single_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
-  uint32_t voltage;
+  double voltage;
 
   enable_mux_number mux;
   pin_number pin;
@@ -275,8 +275,8 @@ void voltage_single_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
     return;
   }
 
-  voltage = single_voltage_measurement(mux, pin);
-
+     voltage=single_voltage_measurement(mux, pin)*25.00/16777216;
+     voltage=voltage*1000;
   sprintf((char *)usb_data->tx_buffer, "VOLT:%lu\r\n", (unsigned long)voltage);
 
   UART_Target_Transmit(usb_data->uartTargetIndex, usb_data->tx_buffer,
@@ -290,7 +290,7 @@ void voltage_single_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
  * ========================================================= */
 
 void voltage_diff_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
-  uint32_t voltage;
+  double voltage;
 
   enable_mux_number mux1;
   enable_mux_number mux2;
@@ -321,7 +321,7 @@ void voltage_diff_handler(UART_DATA *usb_data, Parsed_Command_t *cmd) {
     return;
   }
 
-  voltage = differential_voltage_measurement(mux1, mux2, pin1, pin2);
+  voltage = differential_voltage_measurement(mux1, mux2, pin1, pin2)*25.00/16777216;;
 
   sprintf((char *)usb_data->tx_buffer, "DIFF:%lu\r\n", (unsigned long)voltage);
 

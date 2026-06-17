@@ -5,6 +5,9 @@ static inline void usb_clear_selection(void) {
   DL_GPIO_clearPins(USB__SEL_A0_PORT, USB__SEL_A0_PIN);
   DL_GPIO_clearPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN);
   DL_GPIO_clearPins(USB__SEL_B0_PORT, USB__SEL_B0_PIN);
+   DL_GPIO_clearPins(USB__ENA_PORT, USB__ENA_PIN); 
+  DL_GPIO_clearPins(USB__ENB_PORT, USB__ENB_PIN);
+
 }
 
 void usb_pins_init() {
@@ -49,18 +52,17 @@ void usb_function_test(usb_channel ch) {
   case USB_CH0:                                         // Route INA to OUTA0
     DL_GPIO_setPins(USB__SEL_A1_PORT, USB__SEL_A1_PIN); // SAI = 1
     DL_GPIO_setPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN); // SBI = 1
-    DL_GPIO_clearPins(USB__SEL_A0_PORT,
-                      USB__SEL_A0_PIN); // SAO = 0 (Selects OUTA0)
+    DL_GPIO_clearPins(USB__SEL_A0_PORT, USB__SEL_A0_PIN); // SAO = 0 (Selects OUTA0)
     // SBO is a "Don't Care" here, but keeping it cleared is safe practice
     DL_GPIO_clearPins(USB__SEL_B0_PORT, USB__SEL_B0_PIN);
 
+   
     break;
 
   case USB_CH1:                                         // Route INA to OUTA1
     DL_GPIO_setPins(USB__SEL_A1_PORT, USB__SEL_A1_PIN); // SAI = 1
     DL_GPIO_setPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN); // SBI = 1
-    DL_GPIO_setPins(USB__SEL_A0_PORT,
-                    USB__SEL_A0_PIN); // SAO = 1 (Selects OUTA1)
+    DL_GPIO_setPins(USB__SEL_A0_PORT,USB__SEL_A0_PIN); // SAO = 1 (Selects OUTA1)
     // SBO is a "Don't Care"
     DL_GPIO_clearPins(USB__SEL_B0_PORT, USB__SEL_B0_PIN);
 
@@ -76,16 +78,15 @@ void usb_function_test(usb_channel ch) {
 
     break;
 
-  case USB_CH3:                                           // Route INA to OUTB1
-    DL_GPIO_clearPins(USB__SEL_A1_PORT, USB__SEL_A1_PIN); // SAI = 0
-    DL_GPIO_clearPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN); // SBI = 0
-    // SAO is a "Don't Care"
-    DL_GPIO_clearPins(USB__SEL_A0_PORT, USB__SEL_A0_PIN);
-    DL_GPIO_setPins(USB__SEL_B0_PORT,
-                    USB__SEL_B0_PIN); // SBO = 1 (Selects OUTB1)
-
+case USB_CH3:                                           // Route INA to OUTB1
+    // Explicitly enforce clean control line states
+    DL_GPIO_setPins(USB__SEL_A1_PORT, USB__SEL_A1_PIN); // SAI = 1
+    DL_GPIO_setPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN); // SBI = 1
+    DL_GPIO_clearPins(USB__SEL_A0_PORT, USB__SEL_A0_PIN); // SAO = 0 (Don't care)
+    
+    // Toggle SBO High
+    DL_GPIO_clearPins(USB__SEL_B0_PORT, USB__SEL_B0_PIN);   // SBO = 0 (Selects OUTB1)
     break;
-
   default:
     // Safe state: Isolate all ports if an invalid channel is requested
     DL_GPIO_clearPins(USB__ENA_PORT, USB__ENA_PIN);
@@ -137,4 +138,15 @@ void usb_resistance_test(usb_channel ch) {
     DL_GPIO_clearPins(USB__ENB_PORT, USB__ENB_PIN);
     break;
   }
+}
+
+void to_check(void)
+{
+DL_GPIO_setPins(USB__SEL_A1_PORT, USB__SEL_A1_PIN); // SAI = 1
+    DL_GPIO_setPins(USB__SEL_B1_PORT, USB__SEL_B1_PIN); // SBI = 1
+    DL_GPIO_setPins(USB__SEL_A0_PORT,
+                      USB__SEL_A0_PIN); // SAO = 0 (Selects OUTA0)
+    // SBO is a "Don't Care" here, but keeping it cleared is safe practice
+    DL_GPIO_setPins(USB__SEL_B0_PORT, USB__SEL_B0_PIN);
+
 }

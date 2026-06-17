@@ -31,15 +31,19 @@
  */
 
 #include "headers.h"
-
+uint32_t value=0;
 int main(void)
 {
     SYSCFG_DL_init();
     app_init();
-
+    db_board_init();
     while (1) {
-       
-         usb_fsm(&USB_DATA);
+
+        //  usb_fsm(&USB_DATA);
+        
+        current_10ma_set();
+
+
 
 }
 }

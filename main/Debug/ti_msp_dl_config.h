@@ -34,13 +34,13 @@
  *  ============ ti_msp_dl_config.h =============
  *  Configured MSPM0 DriverLib module declarations
  *
- *  DO NOT EDIT - This file is generated for the LP_MSPM0G3507
+ *  DO NOT EDIT - This file is generated for the MSPM0G110X
  *  by the SysConfig tool.
  */
 #ifndef ti_msp_dl_config_h
 #define ti_msp_dl_config_h
 
-#define CONFIG_LP_MSPM0G3507
+#define CONFIG_MSPM0G110X
 
 #if defined(__ti_version__) || defined(__TI_COMPILER_VERSION__)
 #define SYSCONFIG_WEAK __attribute__((weak))
@@ -185,79 +185,67 @@ extern "C" {
 /* Port definition for Pin Group GPIO_GRP_0 */
 #define GPIO_GRP_0_PORT                                                  (GPIOA)
 
-/* Defines for PIN_0: GPIOA.0 with pinCMx 1 on package pin 33 */
+/* Defines for PIN_0: GPIOA.0 with pinCMx 1 on package pin 1 */
 #define GPIO_GRP_0_PIN_0_PIN                                     (DL_GPIO_PIN_0)
 #define GPIO_GRP_0_PIN_0_IOMUX                                    (IOMUX_PINCM1)
 /* Port definition for Pin Group LED */
 #define LED_PORT                                                         (GPIOA)
 
-/* Defines for Green: GPIOA.14 with pinCMx 36 on package pin 7 */
+/* Defines for Green: GPIOA.14 with pinCMx 36 on package pin 29 */
 #define LED_Green_PIN                                           (DL_GPIO_PIN_14)
 #define LED_Green_IOMUX                                          (IOMUX_PINCM36)
-/* Defines for ENA: GPIOA.2 with pinCMx 7 on package pin 42 */
+/* Defines for ENA: GPIOA.2 with pinCMx 7 on package pin 8 */
 #define USB__ENA_PORT                                                    (GPIOA)
 #define USB__ENA_PIN                                             (DL_GPIO_PIN_2)
 #define USB__ENA_IOMUX                                            (IOMUX_PINCM7)
-/* Defines for ENB: GPIOA.3 with pinCMx 8 on package pin 43 */
+/* Defines for ENB: GPIOA.3 with pinCMx 8 on package pin 9 */
 #define USB__ENB_PORT                                                    (GPIOA)
 #define USB__ENB_PIN                                             (DL_GPIO_PIN_3)
 #define USB__ENB_IOMUX                                            (IOMUX_PINCM8)
-/* Defines for SEL_A0: GPIOA.4 with pinCMx 9 on package pin 44 */
+/* Defines for SEL_A0: GPIOA.4 with pinCMx 9 on package pin 10 */
 #define USB__SEL_A0_PORT                                                 (GPIOA)
 #define USB__SEL_A0_PIN                                          (DL_GPIO_PIN_4)
 #define USB__SEL_A0_IOMUX                                         (IOMUX_PINCM9)
-/* Defines for SEL_A1: GPIOA.5 with pinCMx 10 on package pin 45 */
+/* Defines for SEL_A1: GPIOA.5 with pinCMx 10 on package pin 11 */
 #define USB__SEL_A1_PORT                                                 (GPIOA)
 #define USB__SEL_A1_PIN                                          (DL_GPIO_PIN_5)
 #define USB__SEL_A1_IOMUX                                        (IOMUX_PINCM10)
-/* Defines for SEL_B0: GPIOA.9 with pinCMx 20 on package pin 55 */
+/* Defines for SEL_B0: GPIOA.9 with pinCMx 20 on package pin 17 */
 #define USB__SEL_B0_PORT                                                 (GPIOA)
 #define USB__SEL_B0_PIN                                          (DL_GPIO_PIN_9)
 #define USB__SEL_B0_IOMUX                                        (IOMUX_PINCM20)
-/* Defines for SEL_B1: GPIOB.6 with pinCMx 23 on package pin 58 */
+/* Defines for SEL_B1: GPIOB.6 with pinCMx 23 on package pin 20 */
 #define USB__SEL_B1_PORT                                                 (GPIOB)
 #define USB__SEL_B1_PIN                                          (DL_GPIO_PIN_6)
 #define USB__SEL_B1_IOMUX                                        (IOMUX_PINCM23)
-/* Defines for VBUS_ON: GPIOB.15 with pinCMx 32 on package pin 3 */
+/* Defines for VBUS_ON: GPIOB.15 with pinCMx 32 on package pin 25 */
 #define USB__VBUS_ON_PORT                                                (GPIOB)
 #define USB__VBUS_ON_PIN                                        (DL_GPIO_PIN_15)
 #define USB__VBUS_ON_IOMUX                                       (IOMUX_PINCM32)
-/* Defines for Select_A0: GPIOB.9 with pinCMx 26 on package pin 61 */
+/* Defines for Select_A0: GPIOB.9 with pinCMx 26 on package pin 23 */
 #define UART_Select_A0_PORT                                              (GPIOB)
 #define UART_Select_A0_PIN                                       (DL_GPIO_PIN_9)
 #define UART_Select_A0_IOMUX                                     (IOMUX_PINCM26)
-/* Defines for En: GPIOB.8 with pinCMx 25 on package pin 60 */
+/* Defines for En: GPIOB.8 with pinCMx 25 on package pin 22 */
 #define UART_En_PORT                                                     (GPIOB)
 #define UART_En_PIN                                              (DL_GPIO_PIN_8)
 #define UART_En_IOMUX                                            (IOMUX_PINCM25)
-/* Defines for Select_A1: GPIOA.1 with pinCMx 2 on package pin 34 */
+/* Defines for Select_A1: GPIOA.1 with pinCMx 2 on package pin 2 */
 #define UART_Select_A1_PORT                                              (GPIOA)
 #define UART_Select_A1_PIN                                       (DL_GPIO_PIN_1)
 #define UART_Select_A1_IOMUX                                      (IOMUX_PINCM2)
-/* Defines for SPI_CS: GPIOB.20 with pinCMx 48 on package pin 19 */
+/* Defines for SPI_CS: GPIOB.20 with pinCMx 48 on package pin 41 */
 #define ADC_SPI_CS_PORT                                                  (GPIOB)
 #define ADC_SPI_CS_PIN                                          (DL_GPIO_PIN_20)
 #define ADC_SPI_CS_IOMUX                                         (IOMUX_PINCM48)
-/* Defines for nERROR: GPIOA.22 with pinCMx 47 on package pin 18 */
+/* Defines for nERROR: GPIOA.22 with pinCMx 47 on package pin 40 */
 #define ADC_nERROR_PORT                                                  (GPIOA)
 #define ADC_nERROR_PIN                                          (DL_GPIO_PIN_22)
 #define ADC_nERROR_IOMUX                                         (IOMUX_PINCM47)
-/* Defines for nSYNC: GPIOA.21 with pinCMx 46 on package pin 17 */
+/* Defines for nSYNC: GPIOA.21 with pinCMx 46 on package pin 39 */
 #define ADC_nSYNC_PORT                                                   (GPIOA)
 #define ADC_nSYNC_PIN                                           (DL_GPIO_PIN_21)
 #define ADC_nSYNC_IOMUX                                          (IOMUX_PINCM46)
-/* Port definition for Pin Group LED_ */
-#define LED__PORT                                                        (GPIOB)
-
-/* Defines for GREEN: GPIOB.27 with pinCMx 58 on package pin 29 */
-#define LED__GREEN_PIN                                          (DL_GPIO_PIN_27)
-#define LED__GREEN_IOMUX                                         (IOMUX_PINCM58)
-/* Defines for RED: GPIOB.26 with pinCMx 57 on package pin 28 */
-#define LED__RED_PIN                                            (DL_GPIO_PIN_26)
-#define LED__RED_IOMUX                                           (IOMUX_PINCM57)
-/* Defines for BLUE: GPIOB.22 with pinCMx 50 on package pin 21 */
-#define LED__BLUE_PIN                                           (DL_GPIO_PIN_22)
-#define LED__BLUE_IOMUX                                          (IOMUX_PINCM50)
 
 /* clang-format on */
 

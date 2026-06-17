@@ -18,7 +18,7 @@ ORDERED_OBJS += \
 "./dynamic_parser.o" \
 "./empty.o" \
 "./ti_msp_dl_config.o" \
-"./startup_mspm0g350x_ticlang.o" \
+"./startup_mspm0g110x_ticlang.o" \
 "./i2c_common.o" \
 "./maini2c.o" \
 "./measurement.o" \
@@ -153,15 +153,15 @@ dependents:
 main.out: $(OBJS) $(GEN_CMDS) D:/Metron_firmware/MSPM0G_Library/Debug/MSPM0G_Library.lib
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wall -Wl,-m"main.map" -Wl,-i"C:/ti/mspm0_sdk_2_00_00_03/source" -Wl,-i"D:/Metron_firmware/main" -Wl,-i"D:/Metron_firmware/main/Debug/syscfg" -Wl,-i"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib" -Wl,-i"D:/Metron_firmware/MSPM0G_Library/Debug" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="main_linkInfo.xml" -Wl,--rom_model -o "main.out" $(ORDERED_OBJS)
+	"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O0 -gdwarf-3 -Wall -Wl,-m"main.map" -Wl,-i"C:/ti/mspm0_sdk_2_00_00_03/source" -Wl,-i"D:/Metron_firmware/main" -Wl,-i"D:/Metron_firmware/main/Debug/syscfg" -Wl,-i"C:/ti/ccstheia151/ccs/tools/compiler/ti-cgt-armllvm_4.0.0.LTS/lib" -Wl,-i"D:/Metron_firmware/MSPM0G_Library/Debug" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="main_linkInfo.xml" -Wl,--rom_model -o "main.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "DB_board.o" "adc_spi.o" "app.o" "delay_timer.o" "demo.o" "dynamic_parser.o" "empty.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "i2c_common.o" "maini2c.o" "measurement.o" "test.o" "uart_mux.o" "usb.o" "usb_mux.o" 
-	-$(RM) "DB_board.d" "adc_spi.d" "app.d" "delay_timer.d" "demo.d" "dynamic_parser.d" "empty.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "i2c_common.d" "maini2c.d" "measurement.d" "test.d" "uart_mux.d" "usb.d" "usb_mux.d" 
+	-$(RM) "DB_board.o" "adc_spi.o" "app.o" "delay_timer.o" "demo.o" "dynamic_parser.o" "empty.o" "ti_msp_dl_config.o" "startup_mspm0g110x_ticlang.o" "i2c_common.o" "maini2c.o" "measurement.o" "test.o" "uart_mux.o" "usb.o" "usb_mux.o" 
+	-$(RM) "DB_board.d" "adc_spi.d" "app.d" "delay_timer.d" "demo.d" "dynamic_parser.d" "empty.d" "ti_msp_dl_config.d" "startup_mspm0g110x_ticlang.d" "i2c_common.d" "maini2c.d" "measurement.d" "test.d" "uart_mux.d" "usb.d" "usb_mux.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

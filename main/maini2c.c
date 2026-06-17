@@ -278,7 +278,6 @@ uint32_t single_voltage_measurement(enable_mux_number mux, pin_number pin) {
   }
   reset_all();
   delay_cycles(RELAY_DELAY_CYCLES);
-  value=value* 10000U / 16777215U;
   return value;
 }
 

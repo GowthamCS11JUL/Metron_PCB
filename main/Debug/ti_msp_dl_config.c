@@ -34,7 +34,7 @@
  *  ============ ti_msp_dl_config.c =============
  *  Configured MSPM0 DriverLib module definitions
  *
- *  DO NOT EDIT - This file is generated for the LP_MSPM0G3507
+ *  DO NOT EDIT - This file is generated for the MSPM0G110X
  *  by the SysConfig tool.
  */
 
@@ -187,12 +187,6 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
 
     DL_GPIO_initDigitalOutput(ADC_nSYNC_IOMUX);
 
-    DL_GPIO_initDigitalOutput(LED__GREEN_IOMUX);
-
-    DL_GPIO_initDigitalOutput(LED__RED_IOMUX);
-
-    DL_GPIO_initDigitalOutput(LED__BLUE_IOMUX);
-
     DL_GPIO_clearPins(GPIOA, GPIO_GRP_0_PIN_0_PIN |
 		LED_Green_PIN |
 		USB__ENA_PIN |
@@ -216,19 +210,13 @@ SYSCONFIG_WEAK void SYSCFG_DL_GPIO_init(void)
     DL_GPIO_clearPins(GPIOB, USB__SEL_B1_PIN |
 		USB__VBUS_ON_PIN |
 		UART_Select_A0_PIN |
-		UART_En_PIN |
-		LED__GREEN_PIN |
-		LED__RED_PIN |
-		LED__BLUE_PIN);
+		UART_En_PIN);
     DL_GPIO_setPins(GPIOB, ADC_SPI_CS_PIN);
     DL_GPIO_enableOutput(GPIOB, USB__SEL_B1_PIN |
 		USB__VBUS_ON_PIN |
 		UART_Select_A0_PIN |
 		UART_En_PIN |
-		ADC_SPI_CS_PIN |
-		LED__GREEN_PIN |
-		LED__RED_PIN |
-		LED__BLUE_PIN);
+		ADC_SPI_CS_PIN);
 
 }
 
@@ -538,7 +526,7 @@ static const DL_SPI_Config gSPI_0_config = {
     .mode        = DL_SPI_MODE_CONTROLLER,
     .frameFormat = DL_SPI_FRAME_FORMAT_MOTO4_POL1_PHA1,
     .parity      = DL_SPI_PARITY_NONE,
-    .dataSize    = DL_SPI_DATA_SIZE_8,
+    .dataSize    = DL_SPI_DATA_SIZE_16,
     .bitOrder    = DL_SPI_BIT_ORDER_MSB_FIRST,
     .chipSelectPin = DL_SPI_CHIP_SELECT_0,
 };
