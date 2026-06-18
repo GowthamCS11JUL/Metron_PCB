@@ -76,7 +76,8 @@ usb.o: ../usb.c ../usb.h ../headers.h \
  ../dynamic_parser.h \
  D:/Metron_firmware/MSPM0G_Library/Include/SPI_Interface.h \
  ../variables.h ../uart_mux.h ../i2c_common.h ../adc_spi.h ../usb_mux.h \
- ../maini2c.h ../measurement.h ../test.h ../DB_board.h ../app.h
+ ../maini2c.h ../demo.h ../measurement.h ../test.h ../DB_board.h \
+ ../app.h
 ../usb.h:
 ../headers.h:
 ti_msp_dl_config.h:
@@ -159,6 +160,7 @@ D:/Metron_firmware/MSPM0G_Library/Include/SPI_Interface.h:
 ../adc_spi.h:
 ../usb_mux.h:
 ../maini2c.h:
+../demo.h:
 ../measurement.h:
 ../test.h:
 ../DB_board.h:

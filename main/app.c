@@ -10,9 +10,14 @@ void app_init() {
   io_expander_init();
   usb_pins_init();
   uart_pin_init();
+  db_board_init();
 }
 
-void cmd_data_setup(void) {}
+void cmd_data_setup(void) {
+    
+}
+
+
 
 void command_dispatcher(UART_DATA *usb_data, Parsed_Command_t *cmd) {
   if (cmd->token_count == 0) {
@@ -45,10 +50,10 @@ void command_dispatcher(UART_DATA *usb_data, Parsed_Command_t *cmd) {
   /* DEMO                                         */
   /* -------------------------------------------- */
 
-//   if (strcmp(cmd->tokens[0], "DEMO") == 0) {
-//     demo_command_handler(usb_data, cmd);
-//     return;
-//   }
+  if (strcmp(cmd->tokens[0], "DEMO") == 0) {
+    demo_command_handler(usb_data, cmd);
+    return;
+  }
 
   /* -------------------------------------------- */
   /* UNKNOWN                                      */

@@ -27,7 +27,7 @@
 #include "adc_spi.h"
 #include "usb_mux.h"
 #include "maini2c.h"
-// #include "demo.h"
+#include "demo.h"
 #include "measurement.h"
 #include "test.h"
 #include "DB_board.h"

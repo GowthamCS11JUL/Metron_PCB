@@ -76,7 +76,7 @@ measurement.o: ../measurement.c ../measurement.h ../headers.h \
  ../dynamic_parser.h ../usb.h \
  D:/Metron_firmware/MSPM0G_Library/Include/SPI_Interface.h \
  ../variables.h ../uart_mux.h ../i2c_common.h ../adc_spi.h ../usb_mux.h \
- ../maini2c.h ../test.h ../DB_board.h ../app.h
+ ../maini2c.h ../demo.h ../test.h ../DB_board.h ../app.h
 ../measurement.h:
 ../headers.h:
 ti_msp_dl_config.h:
@@ -160,6 +160,7 @@ D:/Metron_firmware/MSPM0G_Library/Include/SPI_Interface.h:
 ../adc_spi.h:
 ../usb_mux.h:
 ../maini2c.h:
+../demo.h:
 ../test.h:
 ../DB_board.h:
 ../app.h:

@@ -36,12 +36,13 @@ int main(void)
 {
     SYSCFG_DL_init();
     app_init();
-    db_board_init();
+    
     while (1) {
 
-        //  usb_fsm(&USB_DATA);
+         usb_fsm(&USB_DATA);
+        // current_1ua_set();
         
-        current_10ma_set();
+       
 
 
 

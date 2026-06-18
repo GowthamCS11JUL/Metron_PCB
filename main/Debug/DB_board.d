@@ -78,8 +78,9 @@ DB_board.o: ../DB_board.c D:/Metron_firmware/main/headers.h \
  D:/Metron_firmware/main/variables.h D:/Metron_firmware/main/uart_mux.h \
  D:/Metron_firmware/main/i2c_common.h D:/Metron_firmware/main/adc_spi.h \
  D:/Metron_firmware/main/usb_mux.h D:/Metron_firmware/main/maini2c.h \
- D:/Metron_firmware/main/measurement.h D:/Metron_firmware/main/test.h \
- D:/Metron_firmware/main/DB_board.h D:/Metron_firmware/main/app.h
+ D:/Metron_firmware/main/demo.h D:/Metron_firmware/main/measurement.h \
+ D:/Metron_firmware/main/test.h D:/Metron_firmware/main/DB_board.h \
+ D:/Metron_firmware/main/app.h
 D:/Metron_firmware/main/headers.h:
 ti_msp_dl_config.h:
 C:/ti/mspm0_sdk_2_00_00_03/source/ti/devices/msp/msp.h:
@@ -162,6 +163,7 @@ D:/Metron_firmware/main/i2c_common.h:
 D:/Metron_firmware/main/adc_spi.h:
 D:/Metron_firmware/main/usb_mux.h:
 D:/Metron_firmware/main/maini2c.h:
+D:/Metron_firmware/main/demo.h:
 D:/Metron_firmware/main/measurement.h:
 D:/Metron_firmware/main/test.h:
 D:/Metron_firmware/main/DB_board.h:
